@@ -1,9 +1,10 @@
-#!/usr/bin/env python
-#encoding: utf-8
-
 # This is a test program for buzze1.py
+#!/usr/bin/env python
+
 #include of library
 #unittest: Test framework in Phthon
+
+#encoding: utf-8
 import rospy, unittest, rostest
 import rosnode
 import time
@@ -25,3 +26,4 @@ if __name__ == '__main__': #main function in C++ or C
     #rostest.rosrun()
     #1st: package name for test, name of this package, class on test
     rostest.rosrun('pimouse_ros','travis_test_buzzer',BuzzerTest)
+ 
