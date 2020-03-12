@@ -29,7 +29,7 @@ class BuzzerTest(unittest.TestCase):
 
         with open("/dev/rtbuzzer0","r") as f:
             data = f.readline()
-            self.asserEqual(data,"1234\n","value does not written to rtbuzzer0")
+            self.assertEqual(data,"1234\n","value does not written to rtbuzzer0")
             #asserEqual(data,expected,actual) actual:executed when not be expected
         
 if __name__ == '__main__': #main function in C++ or C
