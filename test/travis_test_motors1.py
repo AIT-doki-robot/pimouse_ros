@@ -5,7 +5,7 @@ import unittest, rostest
 import rosnode, rospy
 import time
 from pimouse_ros.msg import MotorFreqs
-import geometry_msgs.msg import Twist
+from geometry_msgs.msg import Twist
 
 class MotorTest(unittest.TestCase):
     def file_check(self, dev, value, message):
