@@ -10,11 +10,11 @@ from geometry_msgs.msg import Twist
 class MotorTest(unittest.TestCase):
     def file_check(self, dev, value, message):
         with open("/dev/"+dev,"r") as f: #open the device
-            self.assrtEqual(f.readline(), str(value)+"\n",message)
+            self.assertEqual(f.readline(), str(value)+"\n",message)
 
     def test_node_exist(self): #check for node existance
         nodes = rosnode.get_node_names()
-        self.assertEqual('/motors',nodes, "node does not exist")
+        self.assertEqual('/motors', nodes, "node does not exist")
 
     def test_put_freq(self): #test for motor_raw
         pub = rospy.Publisher('/motor_raw', MotorFreqs)
