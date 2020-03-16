@@ -14,6 +14,7 @@ class MotorTest(unittest.TestCase):
 
     def test_node_exist(self): #check for node existance
         nodes = rosnode.get_node_names()
+        print(nodes)
         self.assertEqual('/motors', nodes, "node does not exist")
 
     def test_put_freq(self): #test for motor_raw
@@ -42,7 +43,7 @@ class MotorTest(unittest.TestCase):
             time.sleep(0.1)
 
         self.file_check("rtmotor_raw_l0", 200, "wrong left value from cmd_vel")
-        self.file_check("rt_motor_raw_r0",600, "wrong right value from cdm_vel")
+        self.file_check("rtmotor_raw_r0",600, "wrong right value from cdm_vel")
         time.sleep(1.1)
 
         self.file_check("rtmotor_raw_l0",0, "don't stop after 1[s]")
