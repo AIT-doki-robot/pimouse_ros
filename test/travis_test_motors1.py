@@ -78,7 +78,7 @@ class MotorTest(unittest.TestCase):
             data = f.readline()
             self.assertEqual(data,"1\n","wrong value in rtmotor0 at motor on")        
 
-if __name__　== '__main__':
+if __name__ == '__main__':
 #    time.sleep(3)
     rospy.init_node('travis_test_motors')
     rostest.rosrun('pimouse_ros','travis_test_motors',MotorTest)
