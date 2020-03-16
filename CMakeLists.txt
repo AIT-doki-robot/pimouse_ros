@@ -50,6 +50,7 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    FILES
    LightSensorValues.msg
+   MotorFreqs.msg
 #   Message1.msg
 #   Message2.msg
  )
