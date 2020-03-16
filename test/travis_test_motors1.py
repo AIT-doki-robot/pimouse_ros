@@ -10,11 +10,11 @@ import geometry_msgs.msg import Twist
 class MotorTest(unittest.TestCase):
     def file_check(self, dev, value, message):
         with open("/dev/"+dev,"r") as f: #open the device
-            self.assrtEqual(f.readline(), str(value)*"\n",message)
+            self.assrtEqual(f.readline(), str(value)+"\n",message)
 
     def test_node_exist(self): #check for node existance
         nodes = rosnode.get_node_names()
-        self.assertEqual('motors',nodes, "node does not exist")
+        self.assertEqual('/motors',nodes, "node does not exist")
 
     def test_put_freq(self): #test for motor_raw
         pub = rospy.Publisher('/motor_raw', MotorFreqs)
@@ -33,6 +33,7 @@ class MotorTest(unittest.TestCase):
     def test_put_cmd_vel(self): #test for cmd_vel
         pub = rospy.Publisher('/cmd_vel',Twist)
         #definition of instance(not publishing)
+        m = Twist()
 
         m.linear.x = 0.1414
         m.angular.z = 1.57
@@ -41,7 +42,7 @@ class MotorTest(unittest.TestCase):
             time.sleep(0.1)
 
         self.file_check("rtmotor_raw_l0", 200, "wrong left value from cmd_vel")
-        self.file_check("rt_motor_raw_ro",600, "wrong right value from cdm_vel")
+        self.file_check("rt_motor_raw_r0",600, "wrong right value from cdm_vel")
         time.sleep(1.1)
 
         self.file_check("rtmotor_raw_l0",0, "don't stop after 1[s]")
