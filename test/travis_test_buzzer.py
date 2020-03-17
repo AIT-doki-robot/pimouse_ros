@@ -15,8 +15,8 @@ from pimouse_ros.msg import MusicAction, MusicResult, MusicFeedback, MusicGoal
 #the name of function for test should begin with "test_".
 #In addition, the new function should be derived from "uniitest.TestCase".
 class BuzzerTest(unittest.TestCase):
-    #Add SetUp for Action test
-    def SetUp(self):
+    #Add setUp for Action test
+    def setUp(self):
         self.client = actionlib.SimpleActionClient("music",MusicAction)
         #create a client for action
         self.device_values = []
