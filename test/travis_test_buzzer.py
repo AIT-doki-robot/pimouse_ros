@@ -48,7 +48,7 @@ class BuzzerTest(unittest.TestCase):
         self.client.wait_for_server() #wait for server
         self.client.send_goal(goal, feedback_cb = self.feedback_cb)
         #send goal, 2nd item is callback function to catch the feedback
-        self.client.wait_for_server()
+        self.client.wait_for_result() 
 
         self.assertTrue(self.client.get_result(), "Invalid result")
         self.assertEqual(goal.freqs, self.device_values, "Invalid feedback:" + ",".join([str(e) for e in self.device_values]))
