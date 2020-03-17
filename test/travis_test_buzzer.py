@@ -60,7 +60,7 @@ class BuzzerTest(unittest.TestCase):
         
         self.client.wait_for_result(rospy.Duration.from_sec(0.5))
 
-        self.asserFalse(self.client.get_result(), "stop is requested but return true")
+        self.assertFalse(self.client.get_result(), "stop is requested but return true")
         self.assertFalse(goal.freqs == self.device_values, "not stopped")
 
     def feedback_cb(self, feedback):
