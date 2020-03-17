@@ -43,7 +43,7 @@ class BuzzerTest(unittest.TestCase):
     def test_music(self):
         goal = MusicGoal() # create a instance for action goal
         goal.freqs = [100, 200, 300, 400, 0] #set the frequency
-        goal.durations = [1.0, 2.0, 3.0, 2.0] #set the duration
+        goal.durations = [1, 2, 3, 2, 1] #set the duration
 
         self.client.wait_for_server() #wait for server
         self.client.send_goal(goal, feedback_cb = self.feedback_cb)
