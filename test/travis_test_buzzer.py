@@ -8,7 +8,7 @@ import rospy, unittest, rostest, actionlib
 import rosnode
 import time
 from std_msgs.msg import UInt16
-from pimouse_ros.msg import MusicAction, MusicResult, MusicFeedback, MusigGoal
+from pimouse_ros.msg import MusicAction, MusicResult, MusicFeedback, MusicGoal
 
 #definition of class
 #Due to principles in unittest,
