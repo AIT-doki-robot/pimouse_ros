@@ -42,8 +42,8 @@ class BuzzerTest(unittest.TestCase):
     #added function for music test
     def test_music(self):
         goal = MusicGoal() # create a instance for action goal
-        goal.freqs = [100, 200, 300, 0] #set the frequency
-        goal.durations = [2, 2, 2, 2] #set the duration
+        goal.freqs = [100, 200, 300, 400, 0] #set the frequency
+        goal.durations = [1, 2, 3, 2, 1] #set the duration
 
         self.client.wait_for_server() #wait for server
         self.client.send_goal(goal, feedback_cb = self.feedback_cb)
@@ -66,7 +66,7 @@ class BuzzerTest(unittest.TestCase):
     def feedback_cb(self, feedback):
         with open("/dev/rtbuzzer0","r") as f:
             data = f.readline()
-            self.device_values.append(int(data.rstrip()))
+            self.device_values.append(int(data.lstrip()))
             # read values in the device file and add the list
         
 if __name__ == '__main__': #main function in C++ or C
