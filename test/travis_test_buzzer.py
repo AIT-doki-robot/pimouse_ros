@@ -17,7 +17,7 @@ from pimouse_ros.msg import MusicAction, MusicResult, MusicFeedback, MusicGoal
 class BuzzerTest(unittest.TestCase):
     #Add SetUp for Action test
     def SetUp(self):
-        self.client = actionlib.SimpleActionClient("/music",MusicAction)
+        self.client = actionlib.SimpleActionClient("music",MusicAction)
         #create a client for action
         self.device_values = []
         #create a list instance for values in the device file
