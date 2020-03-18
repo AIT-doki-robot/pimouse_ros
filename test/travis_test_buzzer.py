@@ -66,7 +66,7 @@ class BuzzerTest(unittest.TestCase):
     def feedback_cb(self, feedback):
         with open("/dev/rtbuzzer0","r") as f:
             data = f.readline()
-            self.device_values.append(int(data.rstrip()))
+            self.device_values.append(int(data.lstrip()))
             # read values in the device file and add the list
         
 if __name__ == '__main__': #main function in C++ or C
